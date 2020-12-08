@@ -1,11 +1,13 @@
 <template>
   <div>
     <b-table :items="items" :fields="fields" striped dark>
-      <template  #cell(details)="items">
-        <b-button class="mr-2" variant="outline-danger" @click="del(items.id)">
+      <template  #cell(delete)="items">
+        <b-button class="mr-2" variant="outline-danger" @click="del(items.item.id)">
           Delete Item 
         </b-button>
-        <b-button variant="outline-primary" @click="show(items.id)">
+      </template>
+      <template #cell(details)="items">
+        <b-button variant="outline-primary" @click="show(items.item.id)">
           show details 
         </b-button>
       </template>
@@ -23,7 +25,8 @@ export default {
       fields:[
         {key: 'id', label: 'Id' },
         {key: 'tittle', label: 'Title'},
-        {key: 'details'}
+        {key: 'details'},
+        {key: 'delete'}
       ]
     }
   },
@@ -33,8 +36,11 @@ export default {
     }
   },
   methods: {
-    show() {
-      
+    show(id) {
+      console.log(id);
+    },
+    del(id) {
+      console.log(id);
     }
   },
 }
