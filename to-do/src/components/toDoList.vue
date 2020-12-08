@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-table :items="items" :fields="fields" striped dark>
+    <b-table :items="items" :fields="fields" striped id="table">
       <template  #cell(delete)="items" >
         <b-button  variant="outline-danger" class="text-right" @click="del(items.item.id)">
           Delete Item 
@@ -49,5 +49,8 @@ export default {
 #addBtn{
   font-weight: 600;
   border-width: 2px;
+}
+#table{
+  background-color: #947866a1;
 }
 </style>>
