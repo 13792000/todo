@@ -14,6 +14,9 @@ export default new Vuex.Store({
     ]
   },
   mutations: {
+    delitem(state,id) {
+      state.items = state.items.filter(item => item.id != id)
+    }
   },
   actions: {
   },

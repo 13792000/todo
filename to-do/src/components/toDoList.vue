@@ -7,14 +7,12 @@
         </b-button>
       </template>
       <template #cell(details)="items" >
-        <b-button variant="outline-primary" @click="show(items.item.id)">
+        <b-button variant="outline-primary" class="text-right" @click="show(items.item.id)">
           show details 
         </b-button>
       </template>
     </b-table>
-    <b-button id="addBtn" class="d-flex" variant="outline-success">
-      Add
-    </b-button>
+   
   </div>
 </template>
 
@@ -39,18 +37,16 @@ export default {
       console.log(id);
     },
     del(id) {
-      console.log(id);
+      alert('are you shore???')
+      this.$store.commit('delitem', id)
     }
   },
 }
 </script>
 
 <style scoped>
-#addBtn{
-  font-weight: 600;
-  border-width: 2px;
-}
+
 #table{
-  background-color: #947866a1;
+  background-color: #bd5e22a1;
 }
 </style>>
